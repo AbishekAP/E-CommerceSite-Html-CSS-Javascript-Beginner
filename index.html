@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <link rel="website icon" type="png" href="img/title.png">
+    <script src="script.js"></script>
+    <title>Net Kart</title>
+</head>
+<body>
+    <header>
+        <div class="head">
+            <h1>
+                <span class="fa-brands fa-nfc-symbol"></span> NetKart
+            </h1>
+            <div class="nav">
+                <ul>
+                    <li><a href="#" class="seller">seller</a></li>
+                    <li><a href="#" class="CustomerCare">Customer Care</a></li>
+                    <li><button type="button" id="crt-btn"><i class="fa-solid fa-cart-shopping"><span
+                                    class="cart-count">0</span></i></button></li>
+                    <li><button type="button"><i class="fa-regular fa-circle-user"></i></button></li>
+                </ul>
+            </div>
+            <div class="cart" id="crt">
+                <div class="heading">Cart</div>
+                <div id="cart-items">
+                    <span class="IsEmpty"></span>
+                </div>
+                <div class="cart-place-order">
+                    <button>Place Order</button>
+                    <span class="total-price">Rs.</span>
+                </div>
+            </div>
+            <div class="profile-container">
+                <div class="profile-box">
+                    <div class="profile">
+                        <div class="image">
+                            <img src="img/profile/add-new-icon.png" alt="profile" title="profile" class="profile-img">
+                            <input type="file" id="imgfile" accept="image/*" style="display: none;">
+                            <label class="edit-btn" id="edit-profile" for="imgfile"><i
+                                    class="fa-solid fa-pencil"></i></label>
+                        </div>
+                        <div class="username">
+                            <span class="user-name">User-name</span>
+                            <button class="edit-btn" id="edit-username"><i class="fa-solid fa-pencil"></i></button>
+                        </div>
+                        <div class="change-username">
+                            <input type="text" id="get-username" placeholder="Enter the Name">
+                            <button class="edit-btn" id="set-username"><i class="fa-solid fa-check"></i></button>
+                        </div>
+                    </div>
+                    <ul class="profile-options">
+                        <li><a href="#" class="seller"><i class="fa-solid fa-circle-user"></i> Seller</a></li>
+                        <li><a href="#"><i class="fa-solid fa-cart-shopping"></i> Orders</a></li>
+                        <li><a href="#" class="CustomerCare"><i class="fa-solid fa-person-circle-question"></i> Customer Care</a></li>
+                        <li><a href="#"><i class="fa-solid fa-gear"></i> Settings</a></li>
+                    </ul>
+                    <div class="profile-footer">
+                        <h3>terms & conditions</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="seller-container">
+                <div class="seller-box">
+                    <div class="seller">
+                        <div class="image"><img src="" class="profile-img"></div>
+                        <span class="user-name">User-name</span>
+                    </div>
+                    <div class="seller-nav">
+                        <ul>
+                            <li id="add-new-prt">Add New</li>
+                            <li id="sell-prts">Sell Products</li>
+                        </ul>
+                    </div>
+                    <div class="sell-product">
+                        <div class="add-new-product">
+                            <form class="sell-prt-dtl">
+                                <input type="text" placeholder="Title" class="sell-prt-title" value>
+                                <input type="text" placeholder="Sub Title" class="sell-prt-subtitle" value>
+                                <input type="number" placeholder="Original Price" class="sell-prt-or-price" value>
+                                <input type="number" placeholder="Selling Price" class="sell-prt-sl-price" value>
+                                <select name="categories" id="sell-prt-categories">
+                                    <option value="#Fashion">Fashion</option>
+                                    <option value="#Electronics">Electronics</option>
+                                    <option value="#Home-Applience">Home Applience</option>
+                                    <option value="#Mobiles-Tablets">Mobiles & Tablets</option>
+                                    <option value="#Beauty">Beauty</option>
+                                </select>
+                                <input type="file" id="sell-prt-img" accept="image/*" required>
+                                <label for="sell-prt-img" class="sell-upload-img"> Upload Image</label>
+                            </form>
+                            <button class="sell-btn">Sell</button>
+                        </div>
+                        <div class="selling-products">
+                            <div class="sell-product-box">
+                                <div class="sell-prt-img">
+                                    <img src="img/cat/Fashion/BalMain.webp" alt="item">
+                                </div>
+                                <div class="sell-product-details">
+                                    <h3 class="crt-title">Bal-main</h3><span>T-shirt</span>
+                                    <span class="Selling-price"><span>Price:</span>Rs.199</span>
+                                </div>
+                                <button type="button" class="sell-prt-delbtn"><i class="fa-solid fa-trash"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="seller-footer">
+                    <h3>terms & conditions</h3>
+                </div>
+            </div>
+            <div class="CustomerCare-container">
+                <div class="heading">
+                    <h3>Chat Bot</h3>
+                    <a href="#"><span><i class="fa-solid fa-phone"></i> Help Line</span></a>
+                </div>
+                <div class="botcontainer">
+                    <div class="outputbox">
+                    </div>
+                    <div class="inputbox">
+                        <input type="text" id="inputtext" placeholder="Type to chat...">
+                        <button id="btn" onclick="send()"><i class="fa-solid fa-paper-plane"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section class="HomeSection">
+        <div class="home">
+            <h1>Hurry up! deals are Soon...</h1>
+            <button class="btn">Shop Now</button>
+        </div>
+    </section>
+    <section id="categories">
+        <div class="categories">
+            <ul>
+                <li>
+                    <a href="#Fashion"><img src="img/cat/Fashion.webp" alt="Fashion">
+                        <span>Fashion</span></a>
+                </li>
+                <li>
+                    <a href="#Electronics"><img src="img/cat/electronics.webp" alt="">
+                        <span>Electronics</span></a>
+                </li>
+                <li>
+                    <a href="#Home-Applience"><img src="img/cat/HomeAppliences.webp" alt="">
+                        <span>Home Appliance</span></a>
+                </li>
+                <li>
+                    <a href="#Mobiles-Tablets"> <img src="img/cat/phones.webp" alt="">
+                        <span>Mobiles & Tablets</span></a>
+                </li>
+                <li>
+                    <a href="#Beauty"> <img src="img/cat/buaty.webp" alt="">
+                        <span>Beauty</span></a>
+                </li>
+            </ul>
+        </div>
+    </section>
+    <section id="Fashion">
+        <div class="heading">
+            <h1>Fashion</h1>
+        </div>
+        <div class="box-container">
+            <div class="box">
+                <span class="discount">-10%</span>
+                <div class="image">
+                    <img src="img/cat/Fashion/BalMain.webp" class="image">
+                    <div class="icons">
+                        <button class="cart-btn">Buy</button>
+                        <button href="" class="cart-btn add-cart">add cart</button>
+                    </div>
+                </div>
+                <div class="content">
+                    <h3 class="title">Bal-main</h3><span class="sub-title">T-shirt</span>
+                    <div class="price">Rs.999</div><span class="origenal-price">Rs.1999</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="Electronics">
+        <div class="heading">
+            <h1>Electronics</h1>
+        </div>
+        <div class="box-container">
+            <div class="box">
+                <span class="discount">-10%</span>
+                <div class="image">
+                    <img src="img/cat/Electronics/Asus-vivobook-pro.webp" class="image" alt="">
+                    <div class="icons">
+                        <button class="cart-btn">Buy</button>
+                        <button href="" class="cart-btn add-cart">add cart</button>
+                    </div>
+                </div>
+                <div class="content">
+                    <h3 class="title">Asus Vivibook</h3><span class="sub-title">12GB/1TB</span>
+                    <div class="price">Rs.56999</div><span class="origenal-price">Rs.65999</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="Home-Applience">
+        <div class="heading">
+            <h1>Home Appliance</h1>
+        </div>
+        <div class="box-container">
+            <div class="box">
+                <span class="discount">-10%</span>
+                <div class="image">
+                    <img src="img/cat/Home-Applience/whirlpool-refrigerator.webp" class="image" alt="">
+                    <div class="icons">
+                        <button class="cart-btn">Buy</button>
+                        <button href="" class="cart-btn add-cart">add cart</button>
+                    </div>
+                </div>
+                <div class="content">
+                    <h3 class="title">whirlpool refrigerator</h3><span class="sub-title">Double</span>
+                    <div class="price">Rs.29999</div><span class="origenal-price">Rs.35999</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="Mobiles-Tablets">
+        <div class="heading">
+            <h1>Mobiles & Tablets</h1>
+        </div>
+        <div class="box-container">
+            <div class="box">
+                <span class="discount">-9%</span>
+                <div class="image">
+                    <img src="img/cat/Phones&Tablets/NothingPhone.webp" class="image" alt="">
+                    <div class="icons">
+                        <button class="cart-btn">Buy</button>
+                        <button href="" class="cart-btn add-cart">add cart</button>
+                    </div>
+                </div>
+                <div class="content">
+                    <h3 class="title">Nothing 2</h3><span class="sub-title">12GB/256GB</span>
+                    <div class="price">Rs.49999</div><span class="origenal-price">Rs.54,999</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="Beauty">
+        <div class="heading">
+            <h1>Beauty</h1>
+        </div>
+        <div class="box-container">
+            <div class="box">
+                <span class="discount">-10%</span>
+                <div class="image">
+                    <img src="img/cat/Beauty/Dive-hair-conditioner.webp" class="image" alt="">
+                    <div class="icons">
+                        <button class="cart-btn">Buy</button>
+                        <button href="" class="cart-btn add-cart">add cart</button>
+                    </div>
+                </div>
+                <div class="content">
+                    <h3 class="title">Dive conditioner</h3><span class="sub-title">500ml</span>
+                    <div class="price">Rs.199</div><span class="origenal-price">Rs.399</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="box-container">
+            <div class="box">
+                <h3>quick Links</h3>
+                <a href="#">Home</a>
+                <a href="#">Categories</a>
+                <a href="#">CustomerCare</a>
+            </div>
+            <div class="box">
+                <h3>Extra Links</h3>
+                <a href="#">My Account</a>
+                <a href="#">My Order</a>
+                <a href="#">My Cart</a>
+            </div>
+            <div class="box">
+                <h3>Locations</h3>
+                <a href="#">India</a>
+                <a href="#">USA</a>
+                <a href="#">Japan</a>
+                <a href="#">China</a>
+            </div>
+            <div class="box">
+                <h3>Contact</h3>
+                <a href="#">+91 9876543210</a>
+                <a href="#">netkart@gmail.com</a>
+                <a href="#">chennai,india-600028</a>
+                <img src="img/footer/payment-method.png">
+            </div>
+        </div>
+        <div class="credit">Art By <span> AP </span> | all rights reserved</div>
+    </footer>
+    <loader class="loader-box">
+        <div class="loader"></div>
+        <span class="loader-text">loading...</span>
+    </loader>
+    <div class="blur">
+    </div>
+    <div  class="GoToTop" >
+        <a href="#top">
+            <span>^</span>
+        </a>
+    </div>
+
+</body>
+
+</html>
